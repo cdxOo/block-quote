@@ -63,5 +63,15 @@ describe('block-quote', () => {
         expect(str).to.eql(
             "Friendly Arm\n            Khalid\n            Jaheira"
         );
-    })
+    });
+
+    it('throws when called as function and call_site isnt an array', () => {
+        var error = undefined;
+        try {
+            blockquote(`foo`);
+        } catch (e) {
+            error = e;
+        }
+        expect(error).to.exist;
+    });
 });

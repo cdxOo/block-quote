@@ -1,5 +1,11 @@
 function blockquote (call_site, ...placeholder_values) {
 
+    if (!Array.isArray(call_site)) {
+        throw new Error(
+            'block-quote should be called via "bq`foo`;" and not as a function'
+        );
+    }
+
     var base_indent = 0;
     // FIXME: replace might not be the most elegant way to do that
     call_site[0].replace(/^\s*\n(\s*)/, (m, white) => {
