@@ -25,7 +25,7 @@ let str = bq`
 //    |    baz
 
 // also works when code itself is indented deeper
-// and string are nested; e.g.:
+// and placeholders are used; e.g.:
 let getInner = () => (
     (
         (
