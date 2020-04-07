@@ -1,4 +1,4 @@
-# block-quote
+# @cdxoo/block-quote
 Simple indent sanitization for multi line strings via tag for template literals in es6.
 
 ## Installation
