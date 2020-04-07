@@ -1,8 +1,8 @@
-function blockquote (callSite, ...args) {
+function blockquote (call_site, ...placeholder_values) {
 
     var base_indent = 0;
     // FIXME: replace might not be the most elegant way to do that
-    callSite[0].replace(/^\s*\n(\s*)/, (m, white) => {
+    call_site[0].replace(/^\s*\n(\s*)/, (m, white) => {
         base_indent = white.length;
     });
 
@@ -10,12 +10,12 @@ function blockquote (callSite, ...args) {
     var cut = new RegExp(`\\n\\s{${base_indent}}`, 'g');
 
     return (
-        callSite
+        call_site
         .map((str, i) => {
 
             str = str.replace(cut, '\n');
 
-            if (args[i] === undefined) {
+            if (placeholder_values[i] === undefined) {
                 str += ''    
             }
             else {
@@ -25,7 +25,7 @@ function blockquote (callSite, ...args) {
                     local_indent = white.length;
                 });
 
-                var arg = args[i].replace(
+                var arg = placeholder_values[i].replace(
                     /\n/g,
                     '\n' + ' '.repeat(local_indent)
                 );
