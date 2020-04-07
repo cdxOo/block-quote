@@ -10,7 +10,7 @@ Simple indent sanitization for multi line strings via tag for template literals 
 ```javascript
 const bq = require('@cdxoo/block-quote');
     
-let str = bq`
+let str1 = bq`
     alice
         foo
         bar
@@ -38,7 +38,7 @@ let getInner = () => (
         )
     )
 );
-let str = bq`
+let str1 = bq`
     outer {
         ${ getInner() }
     }
