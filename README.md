@@ -1,2 +1,2 @@
 # block-quote
-Simple indent sanitization for multi line strings
+simple indent sanitization for multi line strings
