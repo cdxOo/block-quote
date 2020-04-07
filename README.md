@@ -1,5 +1,5 @@
 # block-quote
-simple indent sanitization for multi line strings.
+Simple indent sanitization for multi line strings via tag for template literals in es6.
 
 ## Installation
 
