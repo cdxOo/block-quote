@@ -31,7 +31,7 @@ function blockquote (call_site, ...placeholder_values) {
                     local_indent = white.length;
                 });
 
-                var arg = placeholder_values[i].replace(
+                var arg = String(placeholder_values[i]).replace(
                     /\n/g,
                     '\n' + ' '.repeat(local_indent)
                 );
